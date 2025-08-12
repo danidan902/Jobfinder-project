@@ -11,9 +11,10 @@ dotenv.config();
 app.use(cors({
   origin: "https://danijobfind.vercel.app",
   methods: ["GET", "POST", "OPTIONS"],
-  allowedHeaders: ["Content-Type"],
+  allowedHeaders: ["Content-Type", "Authorization"], // <-- Add "Authorization" here
   credentials: true
 }));
+
 app.use(express.json());
 
 // db config
