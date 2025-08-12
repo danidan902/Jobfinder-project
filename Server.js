@@ -8,7 +8,12 @@ const PORT = process.env.PORT || 5001
 const app = express();
 
 dotenv.config();
-app.use(cors());
+app.use(cors({
+  origin: "https://danijobfind.vercel.app",
+  methods: ["GET", "POST", "OPTIONS"],
+  allowedHeaders: ["Content-Type"],
+  credentials: true
+}));
 app.use(express.json());
 
 // db config
